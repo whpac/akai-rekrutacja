@@ -1,0 +1,30 @@
+@mixin light-theme {
+    --color-scheme:light;
+    --background-fallback:#eee;
+    --background-image:url(../img/bg-light.jpg);
+    --text-color:#222;
+
+    --primary-color:#496531;
+    --primary-color-alt:#627e49;
+    --logo-filter:invert(1) hue-rotate(180deg);
+
+    --panel-background:rgba(225,225,225,0.5);
+    --panel-body-background:rgba(255,255,255,0.4);
+    --panel-shadow:0 2px 16px 0 rgba(0,0,0,0.5);
+
+    --input-background:#fff;
+    --input-color:#222;
+    --input-border-color:#bbb;
+    --input-bottom-border-color:#999;
+    --input-hover-bottom-border-color:#517a2d;
+    --input-focus-bottom-border-color:#2f6600;
+    --input-error-bottom-border-color:#ff6161;
+
+    --button-background:#ddd;
+    --button-hover-background:#ccc;
+    --button-color:#222;
+    --button-primary-color:#fff;
+    --button-hover-shadow:0 4px 6px 0 rgba(0,0,0,0.3);
+
+    --error-msg-color:#f00;
+}

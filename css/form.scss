@@ -1,0 +1,163 @@
+// Te pliki zawierają zmienne określające kolory używane na stronie
+@import "dark";
+@import "light";
+
+body {
+    margin:0; color-scheme:var(--color-scheme);
+    background-color:var(--background-fallback); color:var(--text-color);
+    background-image:var(--background-image); background-repeat:no-repeat;
+    background-size:cover; background-position:50% 50%;
+    background-attachment:fixed;
+    font-family:Montserrat, sans-serif;
+
+    @include light-theme;
+}
+
+@media(prefers-color-scheme:dark){
+    body {
+        @include dark-theme;
+    }
+}
+
+body.dark {@include dark-theme;}
+body.light {@include light-theme;}
+
+// Element, który wyśrodkuje formularz w pionie i poziomie
+.center-wrapper {
+    display:grid; min-height:100vh;
+    grid-template-columns:1fr auto 1fr;
+    grid-template-rows:1fr auto 1fr;
+
+    > * {grid-row:2; grid-column:2;}
+}
+
+// Panel
+.panel {
+    $panel-border-radius:8px;
+
+    background:var(--panel-background);
+    border-radius:$panel-border-radius;
+    box-shadow:var(--panel-shadow);
+
+    &.main {
+        width:min(400px, 100vw - 24px); margin:12px auto;
+    }
+
+    // Część nagłówkowa
+    header {
+        padding:20px;
+
+        .akai-logo {
+            width:32px; display:block;
+            margin:0 auto 8px auto;
+            filter:var(--logo-filter);
+        }
+
+        h2 {
+            margin:0; text-align:center;
+            font-weight:400;
+        }
+    }
+
+    // Główna zawartość formularza
+    .panel-body {
+        padding:20px 20px 12px 20px;
+        background:var(--panel-body-background);
+        border-bottom-left-radius:$panel-border-radius;
+        border-bottom-right-radius:$panel-border-radius;
+    }
+}
+
+// Pola tekstowe
+input[type="text"], input[type="email"] {
+    background:var(--input-background); padding:4px 8px;
+    border:1px solid var(--input-border-color); border-radius:3px;
+    border-bottom:2px solid var(--input-bottom-border-color);
+    font:inherit; font-size:0.9em; color:var(--input-color);
+    transition:border-bottom-color 0.3s;
+
+    &.error {
+        border-bottom-color:var(--input-error-bottom-border-color);
+    }
+
+    &:hover {
+        border-bottom-color:var(--input-hover-bottom-border-color);
+    }
+
+    &:focus {
+        border-bottom-color:var(--input-focus-bottom-border-color);
+        outline:none;
+    }
+}
+
+// Wrapper dla pary etykieta + pole/pola formularza
+.field-wrapper {
+    margin-bottom:12px;
+
+    > label, > .header {
+        display:block; font-size:0.8em;
+        text-align:center; font-weight:600;
+        margin-bottom:2px;
+    }
+    > input {
+        display:block; margin:0 auto;
+        width:70%;
+    }
+}
+
+// Wybór sekcji koła
+.section-picker {
+    list-style:none;
+    margin:0; padding:0; display:grid;
+    grid-template-columns:max-content max-content;
+    grid-auto-flow:row;
+    justify-content:space-evenly;
+
+    label {
+        font-size:0.9em;
+    }
+}
+
+// Przycisk
+button {
+    height:32px; display:block; margin:4px auto; padding:0 12px;
+    background-color:var(--button-background); color:var(--button-color);
+    border:none; border-radius:16px; appearance:none;
+    font-family:inherit; font-weight:500;
+    cursor:pointer;
+    transition:background-color 0.3s, box-shadow 0.3s;
+
+    &:hover {
+        background-color:var(--button-hover-background);
+        box-shadow:var(--button-hover-shadow);
+    }
+
+    &.primary {
+        background-color:var(--primary-color); color:var(--button-primary-color);
+
+        &:hover {
+            background-color:var(--primary-color-alt);
+        }
+    }
+}
+
+form button {min-width:40%;}
+
+// Komunikaty o błędach w formularzu
+.error-msg {
+    display:block; margin-top:2px;
+    font-size:0.8em; text-align:center; color:var(--error-msg-color);
+}
+
+// Wybór motywu
+.theme-selector {
+    button {width:100%;}
+    .author {display:block; font-size:0.8em; text-align:center;}
+
+    @media (min-width:850px){
+        position:fixed; bottom:-160px; right:20px;
+        transition:bottom 0.3s;
+    
+        &:hover {bottom:20px;}
+    }
+}

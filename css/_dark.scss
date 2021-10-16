@@ -1,0 +1,30 @@
+@mixin dark-theme {
+    --color-scheme:dark;
+    --background-fallback:#000;
+    --background-image:url(../img/bg-dark.jpg);
+    --text-color:#fff;
+    
+    --primary-color:#fb5f62;
+    --primary-color-alt:#fb8386;
+    --logo-filter:none;
+    
+    --panel-background:rgba(30,30,30,0.5);
+    --panel-body-background:rgba(0,0,0,0.3);
+    --panel-shadow:0 2px 16px 0 rgba(0,0,0,0.5);
+    
+    --input-background:#222;
+    --input-color:#d8d8d8;
+    --input-border-color:#383838;
+    --input-bottom-border-color:#666;
+    --input-hover-bottom-border-color:var(--primary-color-alt);
+    --input-focus-bottom-border-color:var(--primary-color);
+    --input-error-bottom-border-color:#930000;
+    
+    --button-background:#444;
+    --button-hover-background:#555;
+    --button-color:#fff;
+    --button-primary-color:#000;
+    --button-hover-shadow:0 4px 6px 0 rgba(0,0,0,0.3);
+
+    --error-msg-color:#f44;
+}

@@ -1,0 +1,106 @@
+<!--
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    AKAI Frontend Task - HTML
+
+    W tym pliku znajduje się struktura strony z formularzem. Twoim zadaniem jest upiększenie
+    tego formularza. Przeanalizuj poniższy kod. Jego znajomość będzie potrzebna do przerobienia
+    pliku form.css odpowiedzialnego za styl strony. Gdy zapoznasz się ze strukturą strony,
+    przejdź do pliku css/form.css lub js/validation.js po dalsze instrukcje.
+
+    Powodzenia!
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AKAI Frontend Task</title>
+        <link rel="stylesheet" type="text/css" href="css/form.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+            rel="stylesheet">
+        <meta name="viewport" charset="utf-8"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    </head>
+    <body>
+        <div class="center-wrapper">
+            <div>
+                <section class="panel main">
+                    <header>
+                        <img class="akai-logo" src="img/akai_logo.svg" alt="Logo AKAI" />
+                        <h2 class="basic-title">Dołącz do nas!</h2>
+                    </header>
+
+                    <div class="panel-body">
+                        <form method="POST" id="enroll-form">
+                            <div class="field-wrapper">
+                                <label for="first-name">Imię</label>
+                                <input type="text" id="first-name" />
+                                <span class="error-msg" id="first-name-error"></span>
+                            </div>
+
+                            <div class="field-wrapper">
+                                <label for="last-name">Nazwisko</label>
+                                <input type="text" id="last-name" />
+                                <span class="error-msg" id="last-name-error"></span>
+                            </div>
+
+                            <div class="field-wrapper">
+                                <label for="email">Adres e-mail</label>
+                                <input type="email" id="email" />
+                                <span class="error-msg" id="email-error"></span>
+                            </div>
+
+                            <div class="field-wrapper">
+                                <span class="header">Sekcje</span>
+                                <ul class="section-picker">
+                                    <li>
+                                        <input type="checkbox" id="frontend-checkbox" name="section"
+                                            value="frontend" />
+                                        <label for="frontend-checkbox">Frontend</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="backend-checkbox" name="section"
+                                            value="frontend" />
+                                        <label for="backend-checkbox">Backend</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="mobile-checkbox" name="section"
+                                            value="frontend" />
+                                        <label for="mobile-checkbox">Mobile</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" id="graphics-checkbox" name="section"
+                                            value="frontend" />
+                                        <label for="graphics-checkbox">Grafika</label>
+                                    </li>
+                                </ul>
+                                <span class="error-msg" id="sections-error"></span>
+                            </div>
+                            <button type="submit" class="primary">Prześlij</button>
+                        </form>
+                    </div>
+
+                </section>
+
+                <aside class="panel theme-selector">
+                    <header>
+                        <h2>Wybierz motyw</h2>
+                    </header>
+                    <div class="panel-body">
+                        <button type="button" id="theme-auto">Zależny od ustawień przeglądarki</button>
+                        <button type="button" id="theme-light">Jasny</button>
+                        <button type="button" id="theme-dark">Ciemny</button>
+                        <span class="author">
+                            Wykonanie: Marcin Szwarc
+                        </span>
+                    </div>
+                </aside>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/validation.js"></script>
+
+    </body>
+</html>
